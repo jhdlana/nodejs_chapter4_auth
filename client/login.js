@@ -29,6 +29,12 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             })
             .then(response => response.json()) // 서버로부터 받은 응답을 JSON으로 변환합니다.
             .then(posts => {
+                const h1 = document.querySelector('h1')
+                h1.textContent = ''
+                const form = document.querySelector('form')
+                form.textContent = 'POST'
+                form.style.textAlign = 'center'
+
                 // 'postsList' ID를 가진 요소를 DOM에서 찾습니다.
                 const postsList = document.getElementById('postsList');
                 postsList.innerHTML = ''; // 기존에 게시된 게시물 목록을 비웁니다.
